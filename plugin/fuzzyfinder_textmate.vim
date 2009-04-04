@@ -54,6 +54,7 @@ function! InstantiateTextMateMode() "{{{
 ruby << RUBY
   begin
     require "#{ENV['HOME']}/.vim/ruby/fuzzy_file_finder"
+    require "C:\\Program Files\\Vim\\vimfiles\\ruby\\fuzzy_file_finder"
   rescue LoadError
     begin
       require 'rubygems'
@@ -65,7 +66,7 @@ ruby << RUBY
     rescue LoadError
     end
 
-    require 'fuzzy_file_finder'
+    require "C:\\Program Files\\Vim\\vimfiles\\ruby\\fuzzy_file_finder"
   end
 RUBY
 
