@@ -53,7 +53,7 @@ command! -bang -narg=? -complete=file   FuzzyFinderTextMate   call FuzzyFinderTe
 function! InstantiateTextMateMode() "{{{
 ruby << RUBY
   begin
-    require "#{ENV['HOME']}/.vim/ruby/fuzzy_file_finder"
+    #require "#{ENV['HOME']}/.vim/ruby/fuzzy_file_finder"
     require "C:\\Program Files\\Vim\\vimfiles\\ruby\\fuzzy_file_finder"
   rescue LoadError
     begin
@@ -66,7 +66,7 @@ ruby << RUBY
     rescue LoadError
     end
 
-    require "C:\\Program Files\\Vim\\vimfiles\\ruby\\fuzzy_file_finder"
+require 'fuzzy_file_finder'
   end
 RUBY
 
