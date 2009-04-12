@@ -50,6 +50,12 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set guioptions-=m
 set statusline=%<%f\ %h%m%r%=%-20.(line=%l,col=%c%V,totlin=%L%)\%h%m%r%=%-40(,%n%Y%)\%P
 set laststatus=2
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+:set tags="C:\Program Files\Vim\vimfiles\ctags"
+
+map <Esc> :w!<CR>
 
 map <C-q> :mksession! ~/.vim/.session <cr>
 map <C-//> map ,# :s/^/#/<CR>
@@ -62,20 +68,20 @@ set guioptions-=T
 if has("gui_running")
   "tell the term has 256 colors
   set t_Co=256
-  colorscheme desert 
+  colorscheme ir_black
   set lines=40
   set columns=115
 else
   let g:CSApprox_loaded = 0
-  colorscheme desert
+  colorscheme ir_black
 endif
 
 
 if $COLORTERM == 'gnome-terminal'
   set term=gnome-256color
-  colorscheme desert
+  colorscheme ir_black
 else
-  colorscheme desert
+  colorscheme ir_black
 endif
 
 syntax on                 " Enable syntax highlighting
@@ -286,3 +292,23 @@ function! OpenRailsDoc(keyword)
   exec '!'.g:browser.' '.url.' &'
 endfunction
 noremap RR :call OpenRailsDoc(expand('<cword>'))<CR>
+
+"fun! MySys()
+ " return "windows"
+"endfun
+
+"set runtimepath=~/vim_local,$VIMRUNTIME
+"source ~/vim_local/vimrc
+
+
+"if has("win32")
+	"let new_home = "C:\\Program Files\\Vim" 
+	"let &rtp = substitute(&rtp, $HOME, new_home, 'g') 
+	"let $HOME = new_home 
+"endif 
+
+map f :FuzzyFinderTextMate<CR>
+map + <C-W>+
+map - <C-W>-
+
+set wrap
