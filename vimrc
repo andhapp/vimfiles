@@ -53,7 +53,7 @@ set laststatus=2
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-:set tags="C:\Program Files\Vim\vimfiles\ctags"
+set tags="C:\Program Files\Vim\vimfiles\ctags"
 
 map <Esc> :w!<CR>
 
@@ -166,6 +166,9 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:VIM_HOME = "C:\\Program Files\\Vim"
+let g:VIM_FILES = "C:\\Program Files\\Vim\\vimfiles"
+
 " BEGIN rails-toolkit settings
 runtime debian.vim
 runtime macros/rails-toolkit.vim
@@ -174,7 +177,9 @@ runtime macros/rails-toolkit.vim
 " Visual
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
+set wrap
 set list
+
 " Show $ at end of line and trailing space as ~
 set lcs=tab:\ \ ,extends:>,precedes:<
 set novisualbell  " No blinking .
@@ -293,22 +298,7 @@ function! OpenRailsDoc(keyword)
 endfunction
 noremap RR :call OpenRailsDoc(expand('<cword>'))<CR>
 
-"fun! MySys()
- " return "windows"
-"endfun
 
-"set runtimepath=~/vim_local,$VIMRUNTIME
-"source ~/vim_local/vimrc
+" Key Mapping for fuzzyfinder
+map <C-F> :FuzzyFinderTextMate<CR>
 
-
-"if has("win32")
-	"let new_home = "C:\\Program Files\\Vim" 
-	"let &rtp = substitute(&rtp, $HOME, new_home, 'g') 
-	"let $HOME = new_home 
-"endif 
-
-map f :FuzzyFinderTextMate<CR>
-map + <C-W>+
-map - <C-W>-
-
-set wrap
